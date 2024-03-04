@@ -3,6 +3,7 @@ import 'package:jak_one_pay/pages/home_page.dart';
 import 'package:jak_one_pay/pages/profile_page.dart';
 
 class BottomNavigation extends StatefulWidget {
+  static const routeName = '/bottomNav';
   const BottomNavigation({Key? key}) : super(key: key);
 
   @override

@@ -1,10 +1,14 @@
+import 'dart:core';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jak_one_pay/pages/bottom_navbar.dart';
 
 class OnBoardingPage extends StatefulWidget {
+  static const routeName = '/onboarding';
   const OnBoardingPage({super.key});
 
   @override
@@ -29,9 +33,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarIconBrightness: Brightness.dark,
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarIconBrightness: Brightness.dark,
+        statusBarColor: Colors.transparent,
+      ),
+    );
     return Scaffold(
       body: SafeArea(
           child: Stack(
@@ -139,10 +146,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => BottomNavigation()));
+                    context.push(BottomNavigation.routeName);
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
@@ -172,10 +176,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => BottomNavigation()));
+                    context.push(BottomNavigation.routeName);
                   },
                   child: Container(
                     padding: const EdgeInsets.symmetric(

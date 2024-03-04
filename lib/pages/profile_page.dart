@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ProfilePage extends StatefulWidget {
+class ProfilePage extends StatelessWidget {
+  static const routeName = '/profile';
   const ProfilePage({Key? key}) : super(key: key);
 
-  @override
-  _ProfilePageState createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +51,6 @@ class _ProfilePageState extends State<ProfilePage> {
                   icon: const Icon(Icons.delete_outlined),
                   title: 'Hapus Akun',
                 ),
-
                 const SizedBox(
                   height: 15.0,
                 ),
@@ -78,21 +73,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   title: 'Aplikasi',
                   onPressed: () {},
                 ),
-                // _profileItemButton(
-                //   icon: const Icon(
-                //     Icons.key_outlined,
-                //     color: Colors.grey,
-                //   ),
-                //   title: 'Pengaturan Chatbot',
-                //   onPressed: () {
-                //     Navigator.pushNamed(context, TableChatBotKey.routeName);
-                //   },
-                // ),
                 _profileItemButton(
-                    icon: Icon(Icons.privacy_tip_outlined),
+                    icon: const Icon(Icons.privacy_tip_outlined),
                     title: 'Kebijakan Privasi'),
                 _profileItemButton(
-                    icon: Icon(Icons.note_alt_outlined),
+                    icon: const Icon(Icons.note_alt_outlined),
                     title: 'Syarat dan Ketentuan'),
                 _profileItemButton(
                   icon: const Icon(
@@ -117,7 +102,7 @@ Widget _profileItemButton({
   void Function()? onPressed,
 }) {
   return Container(
-    decoration: BoxDecoration(
+    decoration: const BoxDecoration(
         border: Border(
             bottom: BorderSide(color: Colors.white38),
             top: BorderSide(color: Colors.white30))),
@@ -141,9 +126,9 @@ Widget _profileItemButton({
           Expanded(
               child: Text(
             title,
-            style: TextStyle(color: Colors.grey),
+            style: const TextStyle(color: Colors.grey),
           )),
-          Icon(Icons.navigate_next, color: Color(0xFFFE5F5F))
+          const Icon(Icons.navigate_next, color: Color(0xFFFE5F5F))
         ],
       ),
     ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jak_one_pay/pages/onboard_page.dart';
 
 class SplashScreen extends StatefulWidget {
+  static const routeName = '/splash';
   const SplashScreen({super.key});
 
   @override
@@ -13,24 +14,19 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
     Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const OnBoardingPage(),
-        ),
-      );
+      context.push(OnBoardingPage.routeName);
     });
     super.initState();
   }
 
-  @override
-  void dispose() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: SystemUiOverlay.values);
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+  //       overlays: SystemUiOverlay.values);
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +63,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       Text(
                         'Powered by Bank DKI',
                         style: GoogleFonts.inter(
-                            textStyle: TextStyle(
+                            textStyle: const TextStyle(
                           fontWeight: FontWeight.normal,
                           fontSize: 12,
                           color: Colors.white,
@@ -76,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       Text(
                         '2023',
                         style: GoogleFonts.inter(
-                          textStyle: TextStyle(
+                          textStyle: const TextStyle(
                             fontWeight: FontWeight.normal,
                             fontSize: 12,
                             color: Colors.white,
